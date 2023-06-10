@@ -62,6 +62,9 @@ const backup = async (req,res,next) => {
 
 }
 
+cron.schedule('0 0 0 * * *', () => { //her gece saat 12
+  backup(); ///yedekle
+});
 
 module.exports={
   backup,
